@@ -20,6 +20,7 @@ namespace programming_timer
         private void btnInciar_Click(object sender, EventArgs e)
         {
             btnInciar.Enabled = false;
+            this.TopMost = true;
 
             if (btnInciar.Text == "Continuar")
             {
@@ -55,7 +56,7 @@ namespace programming_timer
                 lblTimer.Text = "03:00:00";
             }
 
-            tmrContador.Interval = 1;
+            tmrContador.Interval = 1000;
             tmrContador.Enabled = true;
 
             lblInfo.Text = "Programando..";
@@ -73,7 +74,6 @@ namespace programming_timer
                 btnInciar.Enabled = true;
                 this.WindowState = FormWindowState.Normal;
 
-                this.TopMost = true;
                 lblInfo.Text = "Tarea finalizada !!";
             }
         }

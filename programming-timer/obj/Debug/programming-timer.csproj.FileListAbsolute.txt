@@ -20,3 +20,26 @@ D:\Codigo fuente de proyectos\programming-timer\programming-timer\bin\Debug\prog
 D:\Codigo fuente de proyectos\programming-timer\programming-timer\bin\Debug\programming-timer.application
 D:\Codigo fuente de proyectos\programming-timer\programming-timer\obj\Debug\programming-timer.exe.manifest
 D:\Codigo fuente de proyectos\programming-timer\programming-timer\obj\Debug\programming-timer.application
+D:\Codigo Fuente\programming-timer\programming-timer\bin\Debug\programming-timer.exe.config
+D:\Codigo Fuente\programming-timer\programming-timer\bin\Debug\programming-timer.exe
+D:\Codigo Fuente\programming-timer\programming-timer\bin\Debug\programming-timer.pdb
+D:\Codigo Fuente\programming-timer\programming-timer\bin\Debug\Infragistics4.Shared.v14.1.dll
+D:\Codigo Fuente\programming-timer\programming-timer\bin\Debug\Infragistics4.Win.Misc.v14.1.dll
+D:\Codigo Fuente\programming-timer\programming-timer\bin\Debug\Infragistics4.Win.v14.1.dll
+D:\Codigo Fuente\programming-timer\programming-timer\bin\Debug\Infragistics4.Shared.v14.1.xml
+D:\Codigo Fuente\programming-timer\programming-timer\bin\Debug\Infragistics4.Win.Misc.v14.1.xml
+D:\Codigo Fuente\programming-timer\programming-timer\bin\Debug\Infragistics4.Win.v14.1.xml
+D:\Codigo Fuente\programming-timer\programming-timer\obj\Debug\programming-timer.csprojAssemblyReference.cache
+D:\Codigo Fuente\programming-timer\programming-timer\obj\Debug\programming_timer.frmMain.resources
+D:\Codigo Fuente\programming-timer\programming-timer\obj\Debug\programming_timer.Properties.Resources.resources
+D:\Codigo Fuente\programming-timer\programming-timer\obj\Debug\programming-timer.csproj.GenerateResource.cache
+D:\Codigo Fuente\programming-timer\programming-timer\obj\Debug\programming-timer.exe.licenses
+D:\Codigo Fuente\programming-timer\programming-timer\obj\Debug\programming-timer.csproj.CoreCompileInputs.cache
+D:\Codigo Fuente\programming-timer\programming-timer\obj\Debug\programming-timer.csproj.CopyComplete
+D:\Codigo Fuente\programming-timer\programming-timer\obj\Debug\programming-timer.exe
+D:\Codigo Fuente\programming-timer\programming-timer\obj\Debug\programming-timer.pdb
+D:\Codigo Fuente\programming-timer\programming-timer\bin\Debug\programming-timer.exe.manifest
+D:\Codigo Fuente\programming-timer\programming-timer\bin\Debug\programming-timer.application
+D:\Codigo Fuente\programming-timer\programming-timer\obj\Debug\programming-timer.TrustInfo.xml
+D:\Codigo Fuente\programming-timer\programming-timer\obj\Debug\programming-timer.exe.manifest
+D:\Codigo Fuente\programming-timer\programming-timer\obj\Debug\programming-timer.application

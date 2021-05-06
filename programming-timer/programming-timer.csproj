@@ -28,7 +28,7 @@
     <ProductName>Programming Timer</ProductName>
     <PublisherName>Master Solutions</PublisherName>
     <SuiteName>Programming Timer</SuiteName>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

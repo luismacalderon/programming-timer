@@ -27,13 +27,17 @@ namespace programming_timer
                 btnInciar.Text = "Iniciar";
                 btnPausar.Enabled = true;
                 tmrContador.Start();
-                lblInfo.Text = "Programando..";
+                lblInfo.Text = "Programando..";               
                 return;
             }
             
             if(rb30.Checked == true)
             {
                 lblTimer.Text = "00:30:00";
+            }
+            else if (rb45.Checked == true)
+            {
+                lblTimer.Text = "00:45:00";
             }
             else if (rb60.Checked == true)
             {
@@ -60,6 +64,12 @@ namespace programming_timer
             tmrContador.Enabled = true;
 
             lblInfo.Text = "Programando..";
+            notifyIcon1.Visible = true;
+            notifyIcon1.BalloonTipTitle = "Programming Timer";
+            notifyIcon1.BalloonTipText = lblTimer.Text;
+            notifyIcon1.ShowBalloonTip(1000);
+            this.WindowState = FormWindowState.Minimized;
+            this.Hide();
         }
 
         private void tmrContador_Tick(object sender, EventArgs e)
@@ -76,6 +86,8 @@ namespace programming_timer
 
                 lblInfo.Text = "Tarea finalizada !!";
             }
+
+            notifyIcon1.BalloonTipText = lblTimer.Text;
         }
 
         private void btnPausar_Click(object sender, EventArgs e)
@@ -100,6 +112,7 @@ namespace programming_timer
             btnPausar.Enabled = true;
             lblTimer.Text = "00:00:00";
             lblInfo.Text = "";
+            btnOcultar.Enabled = false;
         }
 
         private void CambiarColorRadios()
@@ -144,6 +157,35 @@ namespace programming_timer
         {
             CambiarColorRadios();
             rb180.ForeColor = Color.White;
+        }
+
+        private void rb45_CheckedChanged(object sender, EventArgs e)
+        {
+            CambiarColorRadios();
+            rb45.ForeColor = Color.White;
+        }
+
+        private void notifyIcon1_DoubleClick(object sender, EventArgs e)
+        {
+            this.Show();
+            this.WindowState = FormWindowState.Normal;
+            this.notifyIcon1.Visible = false;
+            btnOcultar.Enabled = true;
+        }
+
+        private void btnOcultar_Click(object sender, EventArgs e)
+        {
+            notifyIcon1.Visible = true;
+            this.WindowState = FormWindowState.Minimized;
+            notifyIcon1.ShowBalloonTip(1000);
+            this.Hide();
+        }
+
+        private void frmMain_Shown(object sender, EventArgs e)
+        {
+            notifyIcon1.BalloonTipTitle = "Programming Timer";
+            notifyIcon1.BalloonTipText = lblTimer.Text;
+            btnOcultar.Enabled = false;
         }
     }
 }

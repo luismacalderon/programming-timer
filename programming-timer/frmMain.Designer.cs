@@ -35,8 +35,10 @@
             this.tmrContador = new System.Windows.Forms.Timer(this.components);
             this.btnInciar = new Infragistics.Win.Misc.UltraButton();
             this.ultraGroupBox1 = new Infragistics.Win.Misc.UltraGroupBox();
+            this.btnOcultar = new Infragistics.Win.Misc.UltraButton();
             this.lblInfo = new Infragistics.Win.Misc.UltraLabel();
             this.gbxTiempos = new Infragistics.Win.Misc.UltraGroupBox();
+            this.rb45 = new System.Windows.Forms.RadioButton();
             this.rb180 = new System.Windows.Forms.RadioButton();
             this.rb150 = new System.Windows.Forms.RadioButton();
             this.rb120 = new System.Windows.Forms.RadioButton();
@@ -45,9 +47,8 @@
             this.rb30 = new System.Windows.Forms.RadioButton();
             this.btnCancelar = new Infragistics.Win.Misc.UltraButton();
             this.btnPausar = new Infragistics.Win.Misc.UltraButton();
-            this.rb45 = new System.Windows.Forms.RadioButton();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.btnOcultar = new Infragistics.Win.Misc.UltraButton();
+            this.rbTimer = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.ultraGroupBox1)).BeginInit();
             this.ultraGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gbxTiempos)).BeginInit();
@@ -58,7 +59,7 @@
             // 
             this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimer.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblTimer.Location = new System.Drawing.Point(84, 94);
+            this.lblTimer.Location = new System.Drawing.Point(84, 101);
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.Size = new System.Drawing.Size(429, 111);
             this.lblTimer.TabIndex = 0;
@@ -75,7 +76,7 @@
             this.btnInciar.Name = "btnInciar";
             this.btnInciar.Size = new System.Drawing.Size(66, 34);
             this.btnInciar.TabIndex = 2;
-            this.btnInciar.Text = "Iniciar";
+            this.btnInciar.Text = "Start";
             this.btnInciar.Click += new System.EventHandler(this.btnInciar_Click);
             // 
             // ultraGroupBox1
@@ -92,6 +93,15 @@
             this.ultraGroupBox1.Size = new System.Drawing.Size(597, 318);
             this.ultraGroupBox1.TabIndex = 3;
             // 
+            // btnOcultar
+            // 
+            this.btnOcultar.Location = new System.Drawing.Point(43, 254);
+            this.btnOcultar.Name = "btnOcultar";
+            this.btnOcultar.Size = new System.Drawing.Size(66, 34);
+            this.btnOcultar.TabIndex = 6;
+            this.btnOcultar.Text = "Hide";
+            this.btnOcultar.Click += new System.EventHandler(this.btnOcultar_Click);
+            // 
             // lblInfo
             // 
             appearance1.ForeColor = System.Drawing.Color.White;
@@ -107,6 +117,7 @@
             // gbxTiempos
             // 
             this.gbxTiempos.Controls.Add(this.rb45);
+            this.gbxTiempos.Controls.Add(this.rbTimer);
             this.gbxTiempos.Controls.Add(this.rb180);
             this.gbxTiempos.Controls.Add(this.rb150);
             this.gbxTiempos.Controls.Add(this.rb120);
@@ -117,14 +128,26 @@
             this.gbxTiempos.ForeColor = System.Drawing.Color.Black;
             this.gbxTiempos.Location = new System.Drawing.Point(20, 21);
             this.gbxTiempos.Name = "gbxTiempos";
-            this.gbxTiempos.Size = new System.Drawing.Size(559, 51);
+            this.gbxTiempos.Size = new System.Drawing.Size(559, 65);
             this.gbxTiempos.TabIndex = 4;
+            // 
+            // rb45
+            // 
+            this.rb45.AutoSize = true;
+            this.rb45.ForeColor = System.Drawing.Color.DimGray;
+            this.rb45.Location = new System.Drawing.Point(29, 36);
+            this.rb45.Name = "rb45";
+            this.rb45.Size = new System.Drawing.Size(64, 20);
+            this.rb45.TabIndex = 4;
+            this.rb45.Text = "45 min";
+            this.rb45.UseVisualStyleBackColor = true;
+            this.rb45.CheckedChanged += new System.EventHandler(this.rb45_CheckedChanged);
             // 
             // rb180
             // 
             this.rb180.AutoSize = true;
             this.rb180.ForeColor = System.Drawing.Color.DimGray;
-            this.rb180.Location = new System.Drawing.Point(480, 15);
+            this.rb180.Location = new System.Drawing.Point(464, 10);
             this.rb180.Name = "rb180";
             this.rb180.Size = new System.Drawing.Size(71, 20);
             this.rb180.TabIndex = 3;
@@ -136,7 +159,7 @@
             // 
             this.rb150.AutoSize = true;
             this.rb150.ForeColor = System.Drawing.Color.DimGray;
-            this.rb150.Location = new System.Drawing.Point(397, 15);
+            this.rb150.Location = new System.Drawing.Point(297, 36);
             this.rb150.Name = "rb150";
             this.rb150.Size = new System.Drawing.Size(71, 20);
             this.rb150.TabIndex = 3;
@@ -148,7 +171,7 @@
             // 
             this.rb120.AutoSize = true;
             this.rb120.ForeColor = System.Drawing.Color.DimGray;
-            this.rb120.Location = new System.Drawing.Point(315, 15);
+            this.rb120.Location = new System.Drawing.Point(297, 10);
             this.rb120.Name = "rb120";
             this.rb120.Size = new System.Drawing.Size(71, 20);
             this.rb120.TabIndex = 3;
@@ -160,7 +183,7 @@
             // 
             this.rb90.AutoSize = true;
             this.rb90.ForeColor = System.Drawing.Color.DimGray;
-            this.rb90.Location = new System.Drawing.Point(236, 15);
+            this.rb90.Location = new System.Drawing.Point(155, 36);
             this.rb90.Name = "rb90";
             this.rb90.Size = new System.Drawing.Size(64, 20);
             this.rb90.TabIndex = 2;
@@ -172,7 +195,7 @@
             // 
             this.rb60.AutoSize = true;
             this.rb60.ForeColor = System.Drawing.Color.DimGray;
-            this.rb60.Location = new System.Drawing.Point(157, 15);
+            this.rb60.Location = new System.Drawing.Point(155, 10);
             this.rb60.Name = "rb60";
             this.rb60.Size = new System.Drawing.Size(64, 20);
             this.rb60.TabIndex = 1;
@@ -184,7 +207,7 @@
             // 
             this.rb30.AutoSize = true;
             this.rb30.ForeColor = System.Drawing.Color.DimGray;
-            this.rb30.Location = new System.Drawing.Point(10, 15);
+            this.rb30.Location = new System.Drawing.Point(29, 10);
             this.rb30.Name = "rb30";
             this.rb30.Size = new System.Drawing.Size(64, 20);
             this.rb30.TabIndex = 1;
@@ -198,7 +221,7 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(66, 34);
             this.btnCancelar.TabIndex = 3;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "Cancel";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnPausar
@@ -207,20 +230,8 @@
             this.btnPausar.Name = "btnPausar";
             this.btnPausar.Size = new System.Drawing.Size(66, 34);
             this.btnPausar.TabIndex = 3;
-            this.btnPausar.Text = "Pausar";
+            this.btnPausar.Text = "Pause";
             this.btnPausar.Click += new System.EventHandler(this.btnPausar_Click);
-            // 
-            // rb45
-            // 
-            this.rb45.AutoSize = true;
-            this.rb45.ForeColor = System.Drawing.Color.DimGray;
-            this.rb45.Location = new System.Drawing.Point(80, 15);
-            this.rb45.Name = "rb45";
-            this.rb45.Size = new System.Drawing.Size(64, 20);
-            this.rb45.TabIndex = 4;
-            this.rb45.Text = "45 min";
-            this.rb45.UseVisualStyleBackColor = true;
-            this.rb45.CheckedChanged += new System.EventHandler(this.rb45_CheckedChanged);
             // 
             // notifyIcon1
             // 
@@ -229,14 +240,17 @@
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.DoubleClick += new System.EventHandler(this.notifyIcon1_DoubleClick);
             // 
-            // btnOcultar
+            // rbTimer
             // 
-            this.btnOcultar.Location = new System.Drawing.Point(43, 254);
-            this.btnOcultar.Name = "btnOcultar";
-            this.btnOcultar.Size = new System.Drawing.Size(66, 34);
-            this.btnOcultar.TabIndex = 6;
-            this.btnOcultar.Text = "Ocultar";
-            this.btnOcultar.Click += new System.EventHandler(this.btnOcultar_Click);
+            this.rbTimer.AutoSize = true;
+            this.rbTimer.ForeColor = System.Drawing.Color.DimGray;
+            this.rbTimer.Location = new System.Drawing.Point(464, 36);
+            this.rbTimer.Name = "rbTimer";
+            this.rbTimer.Size = new System.Drawing.Size(61, 20);
+            this.rbTimer.TabIndex = 3;
+            this.rbTimer.Text = "Timer";
+            this.rbTimer.UseVisualStyleBackColor = true;
+            this.rbTimer.CheckedChanged += new System.EventHandler(this.rb180_CheckedChanged);
             // 
             // frmMain
             // 
@@ -281,6 +295,7 @@
         private System.Windows.Forms.RadioButton rb45;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private Infragistics.Win.Misc.UltraButton btnOcultar;
+        private System.Windows.Forms.RadioButton rbTimer;
     }
 }
 

@@ -22,12 +22,12 @@ namespace programming_timer
             btnInciar.Enabled = false;
             this.TopMost = true;
 
-            if (btnInciar.Text == "Continuar")
+            if (btnInciar.Text == "Resume")
             {
-                btnInciar.Text = "Iniciar";
+                btnInciar.Text = "Start";
                 btnPausar.Enabled = true;
                 tmrContador.Start();
-                lblInfo.Text = "Programando..";               
+                lblInfo.Text = "Focus..";               
                 return;
             }
             
@@ -59,11 +59,15 @@ namespace programming_timer
             {
                 lblTimer.Text = "03:00:00";
             }
+            else if (rbTimer.Checked == true)
+            {
+                lblTimer.Text = "00:00:00";
+            }
 
-            tmrContador.Interval = 1000;
+            tmrContador.Interval = 1;
             tmrContador.Enabled = true;
 
-            lblInfo.Text = "Programando..";
+            lblInfo.Text = "Focus..";
             notifyIcon1.Visible = true;
             notifyIcon1.BalloonTipTitle = "Programming Timer";
             notifyIcon1.BalloonTipText = lblTimer.Text;
@@ -75,19 +79,29 @@ namespace programming_timer
         private void tmrContador_Tick(object sender, EventArgs e)
         {
             DateTime TiempoDefinido = Convert.ToDateTime(lblTimer.Text);
-            lblTimer.Text = TiempoDefinido.AddSeconds(-1).ToString("HH:mm:ss");
 
-            if(lblTimer.Text == "00:00:00")
+            if (rbTimer.Checked == false)
             {
-                tmrContador.Enabled = false;
-                tmrContador.Stop();
-                btnInciar.Enabled = true;
-                this.WindowState = FormWindowState.Normal;
+                lblTimer.Text = TiempoDefinido.AddSeconds(-1).ToString("HH:mm:ss");
 
-                lblInfo.Text = "Tarea finalizada !!";
+                if(lblTimer.Text == "00:00:00")
+                {
+                    tmrContador.Enabled = false;
+                    tmrContador.Stop();
+                    btnInciar.Enabled = true;
+
+                    lblInfo.Text = "Finish !!";
+
+                    MostrarAplicacion();
+                }
+
+                notifyIcon1.BalloonTipText = lblTimer.Text;
+            }
+            else
+            {
+                lblTimer.Text = TiempoDefinido.AddSeconds(1).ToString("HH:mm:ss");
             }
 
-            notifyIcon1.BalloonTipText = lblTimer.Text;
         }
 
         private void btnPausar_Click(object sender, EventArgs e)
@@ -100,14 +114,14 @@ namespace programming_timer
             tmrContador.Stop();
             btnPausar.Enabled = false;
             btnInciar.Enabled = true;
-            btnInciar.Text = "Continuar";
-            lblInfo.Text = "En Pausa";
+            btnInciar.Text = "Continue";
+            lblInfo.Text = "Paused";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             tmrContador.Enabled = false;
-            btnInciar.Text = "Iniciar";
+            btnInciar.Text = "Start";
             btnInciar.Enabled = true;
             btnPausar.Enabled = true;
             lblTimer.Text = "00:00:00";
@@ -121,6 +135,16 @@ namespace programming_timer
             {
                 ((RadioButton)control).ForeColor = Color.DimGray;
             }
+        }
+
+        private void MostrarAplicacion()
+        {
+            this.Show();
+            this.WindowState = FormWindowState.Normal;      
+            this.Activate();
+            this.BringToFront();
+            notifyIcon1.Visible = true;
+            btnOcultar.Enabled = true;
         }
 
         private void rb30_CheckedChanged(object sender, EventArgs e)
@@ -167,10 +191,7 @@ namespace programming_timer
 
         private void notifyIcon1_DoubleClick(object sender, EventArgs e)
         {
-            this.Show();
-            this.WindowState = FormWindowState.Normal;
-            this.notifyIcon1.Visible = false;
-            btnOcultar.Enabled = true;
+            MostrarAplicacion();
         }
 
         private void btnOcultar_Click(object sender, EventArgs e)
@@ -184,7 +205,7 @@ namespace programming_timer
         private void frmMain_Shown(object sender, EventArgs e)
         {
             notifyIcon1.BalloonTipTitle = "Programming Timer";
-            notifyIcon1.BalloonTipText = lblTimer.Text;
+            notifyIcon1.BalloonTipText = lblTimer.Text;          
             btnOcultar.Enabled = false;
         }
     }

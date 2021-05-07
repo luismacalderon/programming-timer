@@ -64,7 +64,7 @@ namespace programming_timer
                 lblTimer.Text = "00:00:00";
             }
 
-            tmrContador.Interval = 1;
+            tmrContador.Interval = 1000;
             tmrContador.Enabled = true;
 
             lblInfo.Text = "Focus..";

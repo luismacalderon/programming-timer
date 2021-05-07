@@ -39,6 +39,7 @@
             this.lblInfo = new Infragistics.Win.Misc.UltraLabel();
             this.gbxTiempos = new Infragistics.Win.Misc.UltraGroupBox();
             this.rb45 = new System.Windows.Forms.RadioButton();
+            this.rbTimer = new System.Windows.Forms.RadioButton();
             this.rb180 = new System.Windows.Forms.RadioButton();
             this.rb150 = new System.Windows.Forms.RadioButton();
             this.rb120 = new System.Windows.Forms.RadioButton();
@@ -48,7 +49,6 @@
             this.btnCancelar = new Infragistics.Win.Misc.UltraButton();
             this.btnPausar = new Infragistics.Win.Misc.UltraButton();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.rbTimer = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.ultraGroupBox1)).BeginInit();
             this.ultraGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gbxTiempos)).BeginInit();
@@ -59,7 +59,7 @@
             // 
             this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimer.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblTimer.Location = new System.Drawing.Point(84, 101);
+            this.lblTimer.Location = new System.Drawing.Point(84, 96);
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.Size = new System.Drawing.Size(429, 111);
             this.lblTimer.TabIndex = 0;
@@ -72,7 +72,7 @@
             // 
             // btnInciar
             // 
-            this.btnInciar.Location = new System.Drawing.Point(493, 254);
+            this.btnInciar.Location = new System.Drawing.Point(493, 261);
             this.btnInciar.Name = "btnInciar";
             this.btnInciar.Size = new System.Drawing.Size(66, 34);
             this.btnInciar.TabIndex = 2;
@@ -95,7 +95,7 @@
             // 
             // btnOcultar
             // 
-            this.btnOcultar.Location = new System.Drawing.Point(43, 254);
+            this.btnOcultar.Location = new System.Drawing.Point(43, 261);
             this.btnOcultar.Name = "btnOcultar";
             this.btnOcultar.Size = new System.Drawing.Size(66, 34);
             this.btnOcultar.TabIndex = 6;
@@ -109,7 +109,7 @@
             appearance1.TextVAlignAsString = "Middle";
             this.lblInfo.Appearance = appearance1;
             this.lblInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfo.Location = new System.Drawing.Point(43, 196);
+            this.lblInfo.Location = new System.Drawing.Point(43, 197);
             this.lblInfo.Name = "lblInfo";
             this.lblInfo.Size = new System.Drawing.Size(516, 52);
             this.lblInfo.TabIndex = 5;
@@ -142,6 +142,18 @@
             this.rb45.Text = "45 min";
             this.rb45.UseVisualStyleBackColor = true;
             this.rb45.CheckedChanged += new System.EventHandler(this.rb45_CheckedChanged);
+            // 
+            // rbTimer
+            // 
+            this.rbTimer.AutoSize = true;
+            this.rbTimer.ForeColor = System.Drawing.Color.DimGray;
+            this.rbTimer.Location = new System.Drawing.Point(464, 36);
+            this.rbTimer.Name = "rbTimer";
+            this.rbTimer.Size = new System.Drawing.Size(61, 20);
+            this.rbTimer.TabIndex = 3;
+            this.rbTimer.Text = "Timer";
+            this.rbTimer.UseVisualStyleBackColor = true;
+            this.rbTimer.CheckedChanged += new System.EventHandler(this.rb180_CheckedChanged);
             // 
             // rb180
             // 
@@ -217,7 +229,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(326, 254);
+            this.btnCancelar.Location = new System.Drawing.Point(326, 261);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(66, 34);
             this.btnCancelar.TabIndex = 3;
@@ -226,7 +238,7 @@
             // 
             // btnPausar
             // 
-            this.btnPausar.Location = new System.Drawing.Point(410, 254);
+            this.btnPausar.Location = new System.Drawing.Point(410, 261);
             this.btnPausar.Name = "btnPausar";
             this.btnPausar.Size = new System.Drawing.Size(66, 34);
             this.btnPausar.TabIndex = 3;
@@ -239,18 +251,6 @@
             this.notifyIcon1.Text = "Programming Timer";
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.DoubleClick += new System.EventHandler(this.notifyIcon1_DoubleClick);
-            // 
-            // rbTimer
-            // 
-            this.rbTimer.AutoSize = true;
-            this.rbTimer.ForeColor = System.Drawing.Color.DimGray;
-            this.rbTimer.Location = new System.Drawing.Point(464, 36);
-            this.rbTimer.Name = "rbTimer";
-            this.rbTimer.Size = new System.Drawing.Size(61, 20);
-            this.rbTimer.TabIndex = 3;
-            this.rbTimer.Text = "Timer";
-            this.rbTimer.UseVisualStyleBackColor = true;
-            this.rbTimer.CheckedChanged += new System.EventHandler(this.rb180_CheckedChanged);
             // 
             // frmMain
             // 
